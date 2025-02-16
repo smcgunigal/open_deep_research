@@ -1,6 +1,5 @@
 from typing import Literal
-
-from langchain_anthropic import ChatAnthropic 
+ 
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_openai import ChatOpenAI
@@ -16,7 +15,7 @@ from src.open_deep_research.configuration import Configuration
 from src.open_deep_research.utils import tavily_search_async, deduplicate_and_format_sources, format_sections, perplexity_search
 
 # Set writer model
-writer_model = ChatAnthropic(model=Configuration.writer_model, temperature=0) 
+writer_model = ChatGroq(model=Configuration.writer_model, temperature=0) 
 
 # Nodes
 async def generate_report_plan(state: ReportState, config: RunnableConfig):
